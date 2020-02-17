@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdultController">
+   <left>
+      <TableView fx:id="membersTable" prefHeight="434.0" prefWidth="302.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn prefWidth="75.0" text="Id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+          <TableColumn prefWidth="75.0" text="Nume">
+            <cellValueFactory>
+                <PropertyValueFactory property="lastName" />
+            </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="75.0" text="Prenume">
+                <cellValueFactory>
+                    <PropertyValueFactory property="firstName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="SumaTotala">
+                <cellValueFactory>
+                    <PropertyValueFactory property="sum" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </left>
+   <center>
+      <TableView fx:id="expenditureTable" prefHeight="434.0" prefWidth="295.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Tip">
+            <cellValueFactory>
+                <PropertyValueFactory property="type" />
+            </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="75.0" text="EfectuataDe">
+            <cellValueFactory>
+                <PropertyValueFactory property="by" />
+            </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="75.0" text="Suma">
+            <cellValueFactory>
+                <PropertyValueFactory property="cost" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Descriere">
+            <cellValueFactory>
+                <PropertyValueFactory property="about" />
+            </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Data">
+            <cellValueFactory>
+                <PropertyValueFactory property="date" />
+            </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </center>
+   <right>
+      <AnchorPane fx:id="sum" prefHeight="378.0" prefWidth="214.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="137.0" layoutY="387.0" mnemonicParsing="false" onAction="#addMoney" text="Venit" />
+            <Button layoutX="116.0" layoutY="308.0" mnemonicParsing="false" onAction="#buy" text="Cheltuieste" />
+            <TextField fx:id="expenditureCost" layoutX="74.0" layoutY="84.0" prefHeight="26.0" prefWidth="117.0" />
+            <TextArea fx:id="expenditureAbout" layoutX="26.0" layoutY="152.0" prefHeight="63.0" prefWidth="162.0" />
+            <ComboBox fx:id="expenditureType" layoutX="32.0" layoutY="263.0" prefWidth="150.0" />
+            <ComboBox fx:id="memberCombo" layoutX="76.0" layoutY="40.0" prefHeight="26.0" prefWidth="122.0" />
+            <Text layoutX="21.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Membru" />
+            <Text layoutX="21.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suma" />
+            <Text layoutX="22.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text layoutX="19.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descriere" />
+            <Text layoutX="16.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tip cheltuiala" />
+            <Text layoutX="25.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suma" />
+            <TextField fx:id="sumMember" layoutX="80.0" layoutY="348.0" prefHeight="26.0" prefWidth="113.0" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
